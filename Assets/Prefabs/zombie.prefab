@@ -98,7 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22b8cdf5522dcae4b8d66abd2cfc07e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationSprites: []
+  animationSprites:
+  - {fileID: 21300000, guid: 7e31c659b31ea1e44a6cfeee8c182ef5, type: 3}
   animationTime: 1
   score: 10
 --- !u!61 &8121774383402299188
