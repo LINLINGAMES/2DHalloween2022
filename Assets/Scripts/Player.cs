@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
         Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
 
         // Clamp the position of the character so they do not go out of bounds
-        position.x = Mathf.Clamp(position.x, leftEdge.x, rightEdge.x);
+        position.x = Mathf.Clamp(position.x, leftEdge.x + 2, rightEdge.x - 2);
         transform.position = position;
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))

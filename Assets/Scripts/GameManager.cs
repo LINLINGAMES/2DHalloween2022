@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
 
     private void SetLives(int lives)
     {
-        this.lives = Mathf.Max(lives, 0);
+        this.lives = Mathf.Max(lives, 1);
         livesText.text = lives.ToString();
     }
 
