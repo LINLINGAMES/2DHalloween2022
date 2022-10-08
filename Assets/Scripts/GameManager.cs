@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
         mysteryShip.killed += OnMysteryShipKilled;
         invaders.killed += OnInvaderKilled;
 
+        //BGM
+        SoundManager.Instance.PlayBGM(BGMSoundData.BGM.Main);
+
         NewGame();
     }
 

@@ -44,6 +44,7 @@ public class MysteryShip : MonoBehaviour
         if (direction == 1)
         {
             MoveRight();
+
         }
         else
         {
@@ -53,6 +54,10 @@ public class MysteryShip : MonoBehaviour
 
     private void MoveRight()
     {
+
+        //‚±‚¤‚à‚è‚ª”ò‚Ô‰¹
+        SoundManager.Instance.PlaySE(SESoundData.SE.Bat);
+
         transform.position += Vector3.right * speed * Time.deltaTime;
 
         if (transform.position.x >= rightDestination.x)
