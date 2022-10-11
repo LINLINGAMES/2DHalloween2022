@@ -48,4 +48,6 @@ public class Invader : MonoBehaviour
             SoundManager.Instance.PlaySE(SESoundData.SE.Attack);
         }
     }
+
+    
 }

@@ -61,6 +61,8 @@ public class Player : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Missile") ||
             other.gameObject.layer == LayerMask.NameToLayer("Invader"))
         {
+            SoundManager.Instance.PlaySE(SESoundData.SE.Himei);
+
             if (killed != null)
             {
                 killed.Invoke();

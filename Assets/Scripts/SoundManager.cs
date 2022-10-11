@@ -70,7 +70,8 @@ public class SESoundData
         // ‚±‚ê‚ªƒ‰ƒxƒ‹‚É‚È‚é
         Attack,
         Shoot,
-        Bat
+        Bat,
+        Himei
     }
 
     public SE se;

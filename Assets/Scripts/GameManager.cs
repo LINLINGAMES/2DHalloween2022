@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (lives <= 0 && Input.GetKeyDown(KeyCode.Return))
+        if ((lives <= 0) && Input.GetKeyDown(KeyCode.Return))
         {
             NewGame();
         }
@@ -79,6 +79,9 @@ public class GameManager : MonoBehaviour
     {
         gameOverUI.SetActive(true);
         invaders.gameObject.SetActive(false);
+
+        //ƒ‰ƒ“ƒLƒ“ƒO•\Ž¦
+        naichilab.RankingLoader.Instance.SendScoreAndShowRanking(100);
     }
 
     private void SetScore(int score)
@@ -89,7 +92,7 @@ public class GameManager : MonoBehaviour
 
     private void SetLives(int lives)
     {
-        this.lives = Mathf.Max(lives, 1);
+        this.lives = Mathf.Max(lives, 0);
         livesText.text = lives.ToString();
     }
 
