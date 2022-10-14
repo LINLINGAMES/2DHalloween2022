@@ -58,6 +58,8 @@ public class GameManager : MonoBehaviour
     {
         invaders.ResetInvaders();
         invaders.gameObject.SetActive(true);
+        mysteryShip.gameObject.SetActive(true);
+
 
         for (int i = 0; i < bunkers.Length; i++)
         {
@@ -79,21 +81,22 @@ public class GameManager : MonoBehaviour
     {
         gameOverUI.SetActive(true);
         invaders.gameObject.SetActive(false);
+        mysteryShip.gameObject.SetActive(false);
 
         //ƒ‰ƒ“ƒLƒ“ƒO•\Ž¦
-        naichilab.RankingLoader.Instance.SendScoreAndShowRanking(100);
+        naichilab.RankingLoader.Instance.SendScoreAndShowRanking(score);
     }
 
     private void SetScore(int score)
     {
         this.score = score;
-        scoreText.text = score.ToString().PadLeft(4, '0');
+        scoreText.text = "SCORE:" + score.ToString().PadLeft(4, '0');
     }
 
     private void SetLives(int lives)
     {
         this.lives = Mathf.Max(lives, 0);
-        livesText.text = lives.ToString();
+        livesText.text = "Lives:" + lives.ToString();
     }
 
     private void OnPlayerKilled()

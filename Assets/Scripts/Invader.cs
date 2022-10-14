@@ -15,10 +15,7 @@ public class Invader : MonoBehaviour
     public int score = 10;
     public System.Action<Invader> killed;
 
-    float number = 1f;//Õ“Ë‰ñ”‚ğ”»’è‚·‚é•Ï”
-    private float time;
-    private float vecX;
-    private float vecY;
+    private bool DeathJudge = true;
 
     private void Awake()
     {
@@ -46,22 +43,16 @@ public class Invader : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Laser") && (number == 1f))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Laser") && DeathJudge)
         {
-            time -= Time.deltaTime;
+            killed?.Invoke(this);
 
-            if (time <= 0)
-            {
-                vecX = Random.Range(-8f, 8f);
-                vecY = Random.Range(2f, 3.5f);
-                this.transform.position = new Vector3(vecX, vecY, 0);
-                time = 1.0f;
-            }
-    
             //ƒTƒEƒ“ƒh–Â‚ç‚·
             SoundManager.Instance.PlaySE(SESoundData.SE.Attack);
+
+            DeathJudge = false;
         }
-        else if (other.gameObject.layer == LayerMask.NameToLayer("Laser") && (number == 2f))
+        else if (other.gameObject.layer == LayerMask.NameToLayer("Laser"))
         {
             killed?.Invoke(this);
 
